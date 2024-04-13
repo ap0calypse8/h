@@ -1,5 +1,5 @@
 ## wc
-This is an implementation of `wc` command in Linux which I tried to make using C++. 
+This is an implementation of `wc` command in Linux which I   made using C++. 
 ## Description in Linux 
 wc - print newline, word, and byte counts for each file
 Print newline, word, and byte counts for each FILE, and a total line if more than one FILE is specified. With no FILE, or when FILE is -, read standard input.
