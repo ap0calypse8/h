@@ -31,13 +31,21 @@ Features
 
 ## Usage
 To use the tool first compile the code by running the following commands on the terminal :
+
 `gcc -o main main.cpp`
+
+
+
 Then use the following options to execute the tool :
 - `-b`: Count bytes
 - `-w`: Count words
 - `-l`: Count lines
+
+  
 Example would be as follows :
 `./main -b test.txt`
+
+
 Output :
 `342181`
 
