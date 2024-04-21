@@ -4,14 +4,14 @@
 #include<sstream>
 
 
- static int byte_count(const std::string& filename) { //function to count bytes
-	
-	 std::ifstream file(filename, std::ios::binary);
+static int byte_count(const std::string& filename) { //function to count bytes
 
-	 if (!file.is_open()) {
-		 std::cerr << "error" << "\n";
-		 return -1;
-	 }
+	std::ifstream file(filename, std::ios::binary);
+
+	if (!file.is_open()) {
+		std::cerr << "error" << "\n";
+		return -1;
+	}
 
 	file.seekg(0, std::ios::end);
 	int bytes = file.tellg();
@@ -20,44 +20,44 @@
 	return bytes;
 }
 
- static int word_count(const std::string& filename) { //function to count words
-	 std::ifstream file(filename);
+static int word_count(const std::string& filename) { //function to count words
+	std::ifstream file(filename);
 
-	 if (!file.is_open()) {
-		 std::cerr << "Error!" << filename << "\n";
-		 return -1;
-	 }
-	 int words = 0;
-	 std::string read_word;
+	if (!file.is_open()) {
+		std::cerr << "Error!" << filename << "\n";
+		return -1;
+	}
+	int words = 0;
+	std::string read_word;
 
-	 while (file >> read_word) {
-		 words++;
-	 }
-	 file.close();
+	while (file >> read_word) {
+		words++;
+	}
+	file.close();
 
-	 return words;
-	 
- }
+	return words;
 
- static int line_count(const std::string& filename) { //function to count lines
-	 std::ifstream file(filename);
+}
 
-	 if (!file.is_open()) {
-		 std::cerr << "Error!" << filename << "\n";
-		 return -1;
-	 }
+static int line_count(const std::string& filename) { //function to count lines
+	std::ifstream file(filename);
 
-	 int lines = 0;
-	 std::string read;
+	if (!file.is_open()) {
+		std::cerr << "Error!" << filename << "\n";
+		return -1;
+	}
 
-	 while (std::getline(file, read)) {
-		
-			 lines++;
-		 
-	 }
-	 file.close();
-	 return lines;
- }
+	int lines = 0;
+	std::string read;
+
+	while (std::getline(file, read)) {
+
+		lines++;
+
+	}
+	file.close();
+	return lines;
+}
 
 
 int main(int argc, char* argv[]) { //argc is number of cmd line args and argc is array of pointer containing the args
@@ -71,8 +71,8 @@ int main(int argc, char* argv[]) { //argc is number of cmd line args and argc is
 	}
 	std::string option = argv[1];   //second cmd ard is set for options
 	std::string filename = argv[2]; //third cmd arg is set to filename (here its test.txt)
-	
-	int count = 0;					
+
+	int count = 0;
 
 
 	if (option == "-b") {
@@ -93,19 +93,6 @@ int main(int argc, char* argv[]) { //argc is number of cmd line args and argc is
 		std::cout << count << "\n";
 	}
 
-
-
-	/*  
-	int bytes = byte_count(filename);
-	if (bytes >= 0) {
-		std::cout << "Bytes count for the file is : " << bytes << "\n";
-	}
-
-	int words = word_count(filename);
-	std::cout << "Word count for the file is : " << words << "\n";
-
-	int line = line_count(filename);
-	std::cout << "Lines count for the file is : " << line << "\n"; */
 
 	return 0;
 }
